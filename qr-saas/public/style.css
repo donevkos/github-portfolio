@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: #020617;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #38bdf8;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* CONTAINER */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* CARD */
+
+.card {
+  background: #020617;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: white;
+}
+
+/* BUTTON */
+.login-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #0066ff, #00c6ff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-google {
+  flex: 1;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.btn-google img {
+  width: 18px;
+}
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+/* QR RESULT */
+
+.qr-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-result img {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* LOGIN BOX */
+
+.auth-box {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 100px;
+}

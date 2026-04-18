@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pricing</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.pricing-container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+}
+
+.pricing-title{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.pricing-sub{
+color:#94a3b8;
+margin-bottom:40px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.price-card{
+background:#020617;
+border:1px solid #1e293b;
+border-radius:14px;
+padding:30px;
+}
+
+.price-card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:34px;
+margin:15px 0;
+color:#38bdf8;
+}
+
+.features{
+text-align:left;
+margin:20px 0;
+}
+
+.features li{
+margin-bottom:10px;
+color:#94a3b8;
+}
+
+.btn{
+width:100%;
+padding:12px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+color:black;
+font-weight:600;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#0ea5e9;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+
+<div class="logo">QR SaaS</div>
+
+<div class="nav-links">
+<a href="dashboard.html">Dashboard</a>
+</div>
+
+</div>
+
+<div class="pricing-container">
+
+<h1 class="pricing-title">Pricing Plans</h1>
+<p class="pricing-sub">Choose the plan that fits your needs</p>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Free</h3>
+
+<div class="price">$0</div>
+
+<ul class="features">
+<li>5 QR Codes</li>
+<li>Basic QR Generator</li>
+<li>No analytics</li>
+</ul>
+
+<button class="btn" disabled>
+Current Plan
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Pro</h3>
+
+<div class="price">$5/mo</div>
+
+<ul class="features">
+<li>Unlimited QR Codes</li>
+<li>Scan analytics</li>
+<li>Dynamic QR</li>
+<li>Download QR</li>
+</ul>
+
+<button onclick="buyPremium()" class="btn">
+Upgrade
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Business</h3>
+
+<div class="price">$15/mo</div>
+
+<ul class="features">
+<li>Unlimited QR Codes</li>
+<li>Advanced analytics</li>
+<li>Custom branding</li>
+<li>Priority support</li>
+</ul>
+
+<button onclick="buyPremium()" class="btn">
+Upgrade
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+async function buyPremium(){
+
+const res = await fetch("/api/create-checkout-session",{
+method:"POST"
+});
+
+const data = await res.json();
+
+window.location = data.url;
+
+}
+
+</script>
+
+</body>
+</html>

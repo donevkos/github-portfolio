@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.layout{
+display:flex;
+height:100vh;
+}
+
+.sidebar{
+width:220px;
+background:#020617;
+border-right:1px solid #1e293b;
+padding:20px;
+}
+
+.sidebar h2{
+margin-bottom:25px;
+color:#38bdf8;
+}
+
+.sidebar a{
+display:block;
+margin-bottom:12px;
+text-decoration:none;
+color:#94a3b8;
+}
+
+.sidebar a:hover{
+color:white;
+}
+
+.main{
+flex:1;
+padding:30px;
+overflow:auto;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:25px;
+}
+
+.stat-card{
+background:#020617;
+border:1px solid #1e293b;
+padding:20px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="layout">
+
+<div class="sidebar">
+
+<h2>QR SaaS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="generator.html">QR Generator</a>
+<a href="analytics.html">Analytics</a>
+<a href="pricing.html">Pricing</a>
+
+<a href="#" onclick="logout()">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<h1>Dashboard</h1>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>Total QR</h3>
+<div id="totalQR">0</div>
+</div>
+
+<div class="stat-card">
+<h3>Total Scans</h3>
+<div id="totalScans">0</div>
+</div>
+
+<div class="stat-card">
+<h3>Plan</h3>
+<div id="plan">Free</div>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Create QR Code</h2>
+
+<input id="qrText" placeholder="https://example.com">
+
+<button onclick="generateQR()">Generate QR</button>
+
+<div id="qrResult"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Your QR Codes</h2>
+
+<div id="qrList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function logout(){
+localStorage.removeItem("token");
+window.location.href="login.html";
+}
+
+const token = localStorage.getItem("token");
+
+async function generateQR(){
+
+const text=document.getElementById("qrText").value;
+
+const res=await fetch("/api/create",{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+Authorization:token
+},
+body:JSON.stringify({text})
+});
+
+const data=await res.json();
+
+document.getElementById("qrResult").innerHTML=
+`<img src="${data.qr}" width="200"><br>${data.shortURL}`;
+
+loadQRs();
+
+}
+
+
+async function loadQRs(){
+
+const res=await fetch("/api/myqrs",{
+headers:{Authorization:token}
+});
+
+const data=await res.json();
+
+let html="";
+
+data.forEach(qr=>{
+
+html+=`
+<div class="card">
+${qr.target_url}
+<br>
+Scans: ${qr.scans}
+</div>
+`;
+
+});
+
+document.getElementById("qrList").innerHTML=html;
+
+}
+
+loadQRs();
+
+</script>
+
+</body>
+</html>

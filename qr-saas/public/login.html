@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-box card">
+
+<h2>Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<div class="login-buttons">
+
+<button onclick="login()" class="btn-primary">
+Log In
+</button>
+
+<a href="/auth/google" class="btn-google">
+<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
+Log in with Google
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+async function login(){
+
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+const res = await fetch("/api/login",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+email: email,
+password: password
+})
+});
+
+const data = await res.json();
+
+if(data.token){
+
+localStorage.setItem("token", data.token);
+
+location = "dashboard.html";
+
+}else{
+
+alert(data.error || "Login failed");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

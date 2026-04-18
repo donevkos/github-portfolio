@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Analytics</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>QR Analytics</h1>
+
+<canvas id="scanChart"></canvas>
+
+</div>
+
+<script>
+
+const token=localStorage.getItem("token");
+
+async function load(){
+
+const res=await fetch("/api/analytics",{
+headers:{Authorization:token}
+});
+
+const data=await res.json();
+
+const labels=[];
+const scans=[];
+
+data.qrs.forEach(q=>{
+labels.push(q.code);
+scans.push(q.scans);
+});
+
+new Chart(
+document.getElementById("scanChart"),
+{
+type:"bar",
+data:{
+labels:labels,
+datasets:[{
+label:"QR Scans",
+data:scans
+}]
+}
+});
+
+}
+
+load();
+
+</script>
+
+</body>
+</html>

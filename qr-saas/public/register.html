@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-box card">
+
+<h2>Register</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<div class="login-buttons">
+
+<button onclick="register()" class="btn-primary">
+Register
+</button>
+
+<a href="/auth/google" class="btn-google">
+<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
+Register with Google
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+async function register(){
+
+const res = await fetch("/api/register",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+email: document.getElementById("email").value,
+password: document.getElementById("password").value
+})
+});
+
+const data = await res.json();
+
+if(data.success){
+location = "/login.html";
+}else{
+alert(data.error || "Register failed");
+}
+
+}
+
+</script>
+
+</body>
+</html>

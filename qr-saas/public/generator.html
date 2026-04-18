@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>QR Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-box card">
+
+<h2>Create QR Code</h2>
+
+<input id="qrText" placeholder="Enter link or text">
+
+<button onclick="generateQR()" class="btn-primary">
+Generate QR
+</button>
+
+<div id="qrResult" style="margin-top:20px;"></div>
+
+</div>
+
+<script>
+
+async function generateQR(){
+
+const text = document.getElementById("qrText").value;
+
+const res = await fetch("/api/generate-qr",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({text})
+
+});
+
+const data = await res.json();
+
+document.getElementById("qrResult").innerHTML = `
+
+<img src="${data.qr}" width="200">
+
+<br><br>
+
+<a download="qr.png" href="${data.qr}">
+<button class="btn-primary">Download</button>
+</a>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
