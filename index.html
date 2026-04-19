@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Твоето Име | Портфолио</title>
+    <title>Твоето Име | Frontend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">DevPortfolio</div>
-        <ul>
-            <li><a href="#projects">Проекти</a></li>
-            <li><a href="#about">За мен</a></li>
-            <li><a href="#contact">Контакти</a></li>
-        </ul>
+
+    <nav class="glass-nav">
+        <div class="container">
+            <a href="#" class="logo">Dev<span>Portfolio</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">За мен</a></li>
+                <li><a href="#skills">Умения</a></li>
+                <li><a href="#projects">Проекти</a></li>
+                <li><a href="#contact" class="btn-sm">Контакт</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <h1>Здравейте, аз съм <span class="highlight">[Твоето Име]</span></h1>
-        <p>Създавам красиви и модерни уебсайтове с HTML и CSS.</p>
-        <a href="#projects" class="btn">Виж проектите ми</a>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Достъпен за нови проекти</span>
+            <h1>Превръщам идеите в <span class="gradient-text">красив код.</span></h1>
+            <p>Специализиран във Frontend разработка с фокус върху чистия дизайн и потребителското изживяване.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">Виж проектите</a>
+                <a href="#contact" class="btn-secondary">Свържи се с мен</a>
+            </div>
+        </div>
     </header>
 
-    <section id="projects">
-        <h2>Моите Проекти</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Проект 1</h3>
-                <p>Адаптивен дизайн с CSS Grid.</p>
-                <a href="#">Към кода →</a>
-            </div>
-            </div>
-    </section>
 </body>
 </html>
