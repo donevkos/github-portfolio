@@ -3,36 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Твоето Име | Frontend Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Моите Проекти | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
-    <nav class="glass-nav">
+    <section class="projects-section">
         <div class="container">
-            <a href="#" class="logo">Dev<span>Portfolio</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">За мен</a></li>
-                <li><a href="#skills">Умения</a></li>
-                <li><a href="#projects">Проекти</a></li>
-                <li><a href="#contact" class="btn-sm">Контакт</a></li>
-            </ul>
-        </div>
-    </nav>
+            <header class="section-header">
+                <span class="pre-title">Архив</span>
+                <h1>Проектна Библиотека</h1>
+                <p>Списък с всички разработки, сорс код и документация.</p>
+            </header>
 
-    <header class="hero">
-        <div class="hero-content">
-            <span class="badge">Достъпен за нови проекти</span>
-            <h1>Превръщам идеите в <span class="gradient-text">красив код.</span></h1>
-            <p>Специализиран във Frontend разработка с фокус върху чистия дизайн и потребителското изживяване.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn-primary">Виж проектите</a>
-                <a href="#contact" class="btn-secondary">Свържи се с мен</a>
-            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="ТВОЯТ_GITHUB_LINK" target="_blank" title="Виж файловете"><i class="fa-brands fa-github"></i></a>
+                            <a href="ТВОЯТ_DEMO_LINK" target="_blank" title="Живо демо"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <h3>E-Commerce Interface</h3>
+                        <p>Дизайн на онлайн магазин с фокус върху мобилните устройства и бързина на зареждане.</p>
+                        <ul class="tech-list">
+                            <li>HTML5</li>
+                            <li>Sass</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <h3>Weather Dashboard</h3>
+                        <p>Приложение за времето, използващо външно API и динамична визуализация на данни.</p>
+                        <ul class="tech-list">
+                            <li>HTML</li>
+                            <li>CSS Grid</li>
+                            <li>API Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                </div>
         </div>
-    </header>
+    </section>
 
 </body>
 </html>
