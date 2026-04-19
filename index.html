@@ -1,65 +1,44 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моите Проекти | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="projects.css">
+  <meta charset="UTF-8">
+  <title>Donev Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="projects-section">
-        <div class="container">
-            <header class="section-header">
-                <span class="pre-title">Архив</span>
-                <h1>Проектна Библиотека</h1>
-                <p>Списък с всички разработки, сорс код и документация.</p>
-            </header>
+  <nav>
+    <h2>Donev.dev</h2>
+  </nav>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">
-                            <i class="fa-regular fa-folder-open"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="ТВОЯТ_GITHUB_LINK" target="_blank" title="Виж файловете"><i class="fa-brands fa-github"></i></a>
-                            <a href="ТВОЯТ_DEMO_LINK" target="_blank" title="Живо демо"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <h3>E-Commerce Interface</h3>
-                        <p>Дизайн на онлайн магазин с фокус върху мобилните устройства и бързина на зареждане.</p>
-                        <ul class="tech-list">
-                            <li>HTML5</li>
-                            <li>Sass</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </div>
-                </div>
+  <section class="hero">
+    <h1>Hello, I'm <span>Donev</span></h1>
+    <p>Junior Web Developer building cool projects with JavaScript</p>
+  </section>
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">
-                            <i class="fa-regular fa-folder-open"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <h3>Weather Dashboard</h3>
-                        <p>Приложение за времето, използващо външно API и динамична визуализация на данни.</p>
-                        <ul class="tech-list">
-                            <li>HTML</li>
-                            <li>CSS Grid</li>
-                            <li>API Integration</li>
-                        </ul>
-                    </div>
-                </div>
+  <section class="projects">
+    <h2>🚀 Projects</h2>
 
-                </div>
-        </div>
-    </section>
+    <div class="project-grid">
+
+      <div class="card">
+        <h3>🐍 Snake Game</h3>
+        <p>Classic snake game built with JavaScript.</p>
+        <a href="snake game/index.html" target="_blank">Play Game</a>
+      </div>
+
+      <div class="card">
+        <h3>🔗 QR SaaS App</h3>
+        <p>QR generator with dashboard and analytics pages.</p>
+        <a href="qr-saas/public/index.html" target="_blank">Open App</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Donev | Portfolio</p>
+  </footer>
 
 </body>
 </html>
